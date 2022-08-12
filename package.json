@@ -1,0 +1,29 @@
+{
+  "name": "quicktin",
+  "version": "1.0.1",
+  "description": "Add tailwindcss in nextjs project by one command",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xue1206/quicktin"
+  },
+  "main": "index.mjs",
+  "bin": {
+    "quicktin": "./index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwindcss",
+    "nextjs",
+    "cli"
+  ],
+  "author": "xue1206",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "zx": "^7.0.8"
+  }
+}

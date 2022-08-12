@@ -17,7 +17,7 @@ echo("\u001b[36m>>>2. Init tainwindcss<<<")
 await $`npx tailwindcss init -p`
 
 echo("\u001b[36m>>>3. Update tailwind.config.js<<<")
-const { default: tailwindConfig } = await import("./tailwind.config.js")
+const { default: tailwindConfig } = await import(path.resolve(`./tailwind.config.js`))
 tailwindConfig.content.push("./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}")
 fs.writeFile(
   "./tailwind.config.js",

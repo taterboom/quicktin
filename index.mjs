@@ -17,12 +17,24 @@ echo("\u001b[36m>>>2. Init tainwindcss<<<")
 await $`npx tailwindcss init -p`
 
 echo("\u001b[36m>>>3. Update tailwind.config.js<<<")
-const { default: tailwindConfig } = await import(path.resolve(`./tailwind.config.js`))
+const tailwindConfigPath = path.resolve(`./tailwind.config.js`)
+const { default: tailwindConfig } = await import(tailwindConfigPath)
 tailwindConfig.content.push("./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}")
 fs.writeFile(
-  "./tailwind.config.js",
+  tailwindConfigPath,
   `/** @type {import('tailwindcss').Config} */
 module.exports = ${JSON.stringify(tailwindConfig, undefined, 2)}`
+)
+
+echo("\u001b[36m>>>4. Update styles/globals.css<<<")
+const globalsCssPath = path.resolve("./styles/globals.css")
+const globalsCssText = await fs.readFile(globalsCssPath)
+await fs.writeFile(
+  globalsCssPath,
+  `@tailwind base;
+@tailwind components;
+@tailwind utilities;
+${globalsCssText}`
 )
 
 echo("\u001b[32m>>>Done!<<<")

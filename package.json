@@ -1,6 +1,6 @@
 {
   "name": "quicktin",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "Add tailwindcss in nextjs project by one command",
   "repository": {
     "type": "git",
@@ -25,5 +25,10 @@
   },
   "dependencies": {
     "zx": "^7.0.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }
